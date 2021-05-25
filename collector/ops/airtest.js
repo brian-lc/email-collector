@@ -19,6 +19,6 @@ const Airtable = require('../src/lib/airtable');
 
 const emailTable = new Airtable(process.env.AIR_APPKEY, process.env.AIR_APIKEY);
 
-emailTable.write('nft4me@hotmail.com').then( (resp) => {
-  console.log('resp status:', resp.status, resp.statusText);
-});
+emailTable.writeEmail('nft4me4@hotmail.com').then((resp) => {
+  console.log('Write status:', resp);
+})

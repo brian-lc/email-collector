@@ -17,9 +17,12 @@ service: collector
 # Check out our docs for more details
 frameworkVersion: '2'
 
+# new feature to use .env files natievly
+useDotenv: true
+
 provider:
   name: azure
-  region: West US 2
+  region: East US 2
   runtime: nodejs12
   # os: windows  # windows is default, linux is available
   # prefix: "sample"  # prefix of generated resource name
@@ -73,21 +76,15 @@ package:
     # - include-me-dir/**
 
 functions:
-  hello:
-    handler: src/handlers/hello.sayHello
+  collectEmail:
+    handler: src/handlers/email_collector.collectEmail
     events:
       - http: true
         methods:
-          - GET
+          - POST
         authLevel: anonymous # can also be `function` or `admin`
 
-  goodbye:
-    handler: src/handlers/goodbye.sayGoodbye
-    events:
-      - http: true
-        methods:
-          - GET
-        authLevel: anonymous
+
   # The following are a few examples of other events you can configure:
   # storageBlob:
   #   handler: src/handlers/storageBlob.printMessage
