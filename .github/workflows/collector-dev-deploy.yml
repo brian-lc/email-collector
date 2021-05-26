@@ -22,4 +22,4 @@ jobs:
         AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
         AIR_APPKEY: ${{ secrets.AIR_APPKEY }}
         AIR_APIKEY: ${{ secrets.AIR_APIKEY }}
-    - run: cd email-collector/collector && sls deploy --stage dev
+    - run: cd collector && sls deploy --stage dev
