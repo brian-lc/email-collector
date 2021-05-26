@@ -5,16 +5,16 @@ jest.mock('../lib/airtable');
 
 const context = {
   log: (opts) => {
-    console.log(opts);
+    // console.log(opts);
   }
 }
 
 describe('collectEmail', () => {
-  
+
   beforeEach(() => {
-    
+    Airtable.mockClear();
   });
-  
+
   it('returns an invalid request for an empty body', async () => {
     const req = {
       body: ''

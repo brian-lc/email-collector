@@ -32,6 +32,8 @@ module.exports = class Airtable {
           ]
         }
       });
+      // Axios will raise an error on any status codes > 300 and < 100
+      // If we make it this far, it worked
       return true;
     }
     catch (error) {
