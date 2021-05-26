@@ -24,14 +24,10 @@ provider:
   name: azure
   region: East US 2
   runtime: nodejs12
-  # os: windows  # windows is default, linux is available
-  # prefix: "sample"  # prefix of generated resource name
-  # subscriptionId: A356AC8C-E310-44F4-BF85-C7F29044AF99
-  # stage: dev
-  # type: premium  # premium azure functions
 
   environment: # these will be created as application settings
-    VARIABLE_FOO: 'foo'
+    AIR_APIKEY: ${env:AIR_APIKEY}
+    AIR_APPKEY: ${env:AIR_APPKEY}
 
   # you can define apim configuration here
   # apim:
