@@ -73,7 +73,7 @@ package:
 
 functions:
   collectEmail:
-    handler: src/handlers/email_collector.collectEmail
+    handler: src/handlers/collect_email.collectEmail
     events:
       - http: true
         methods:

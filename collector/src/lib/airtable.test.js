@@ -7,10 +7,6 @@ describe('Using the airtable REST API', () => {
 
   const air = new Airtable('X','X');
 
-  beforeEach(() => {
-    axios.mockClear();
-  });
-
   describe('it gets a successful response', () => {
 
     beforeEach(() => {

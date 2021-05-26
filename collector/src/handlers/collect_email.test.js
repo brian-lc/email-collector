@@ -11,10 +11,6 @@ const context = {
 
 describe('collectEmail', () => {
 
-  beforeEach(() => {
-    Airtable.mockClear();
-  });
-
   it('returns an invalid request for an empty body', async () => {
     const req = {
       body: ''
