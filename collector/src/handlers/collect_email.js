@@ -1,10 +1,7 @@
 'use strict';
 
-
 const Airtable = require('../lib/airtable');
 const Isemail = require('isemail'); 
-
-const air = new Airtable(process.env.AIR_APPKEY, process.env.AIR_APIKEY);
 
 /**
  * Request handler for collect Email endpoint.
@@ -15,10 +12,11 @@ const air = new Airtable(process.env.AIR_APPKEY, process.env.AIR_APIKEY);
 
  module.exports.collectEmail = async function (context, req) {
    context.log('Email capture HTTP trigger function processed a request.', req.body );
- 
+
    if (req.body && req.body.email) {
      const email = req.body.email;
      if (Isemail.validate(email)) {
+       const air = new Airtable(process.env.AIR_APPKEY, process.env.AIR_APIKEY);
        const isCaptured = await air.writeEmail(email);
        context.log('Capture status:', isCaptured);
        if (isCaptured) {
@@ -29,21 +27,21 @@ const air = new Airtable(process.env.AIR_APPKEY, process.env.AIR_APIKEY);
         } else {
           context.res = {
             status: 500,
-            body: { message: 'Unable to store email' }
+            body: { error: 'Unable to store email' }
           }
         }
       } else {
         context.log('Invalid email', email);
         context.res = {
           status: 400,
-          body: { 'error': 'Invalid email address' }
+          body: { error: 'Invalid email address' }
         }
       }
     } else {
     context.log('Invalid Request')
      context.res = {
        status: 400,
-       body: { 'error': 'Invalid request' }
+       body: {  error: 'Invalid request' }
      };
    }
  };
