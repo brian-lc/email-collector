@@ -15,7 +15,7 @@ jobs:
     - name: Display the path
       run: echo $PATH
       shell: bash
-      
+
     - uses: Teakowa/setup-serverless@v2.0.0
       with:
         provider: azure
@@ -26,4 +26,4 @@ jobs:
         AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
         AIR_APPKEY: ${{ secrets.AIR_APPKEY }}
         AIR_APIKEY: ${{ secrets.AIR_APIKEY }}
-    - run: cd collector && sls deploy --stage dev
+    - run: cd collector && npm install && sls deploy --stage dev
