@@ -12,11 +12,11 @@
   ],
   "devDependencies": {
     "jest": "^26.6.3",
+    "serverless": "^2.43.1",
     "serverless-azure-functions": "^2.0.0"
   },
   "dependencies": {
     "axios": "^0.18.1",
-    "dotenv": "^10.0.0",
     "isemail": "^3.2.0"
   }
 }
