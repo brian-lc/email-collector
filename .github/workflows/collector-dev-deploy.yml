@@ -6,6 +6,7 @@ on:
 
 jobs:
   functions-build-and-upload:
+    environment: dev
     runs-on: ubuntu-latest
     steps:
     - uses: Teakowa/setup-serverless@v2.0.0
@@ -13,9 +14,9 @@ jobs:
         provider: azure
       env:
         AZURE_SUBSCRIPTION_ID: "bd709d65-0b57-415c-a331-597434af1ea7"
-        AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID}}
-        AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID}}
-        AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET}}
+        AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+        AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+        AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
         AIR_APPKEY: ${{ secrets.AIR_APPKEY }}
         AIR_APIKEY: ${{ secrets.AIR_APIKEY }}
     - run: sls deploy --stage dev
