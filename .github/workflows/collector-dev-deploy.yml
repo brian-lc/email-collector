@@ -12,6 +12,10 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v2
 
+    - name: Display the path
+      run: echo $PATH
+      shell: bash
+      
     - uses: Teakowa/setup-serverless@v2.0.0
       with:
         provider: azure
