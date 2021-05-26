@@ -24,7 +24,7 @@ jobs:
         AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
         AIR_APPKEY: ${{ secrets.AIR_APPKEY }}
         AIR_APIKEY: ${{ secrets.AIR_APIKEY }}
-    - run: |
+      run: |
         cd collector
         npm install
         npx sls deploy --stage dev
