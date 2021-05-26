@@ -16,7 +16,7 @@ jobs:
           node-version: '12'
 
       - name: Install Dependencies
-        uses: jaid/action-npm-install@v1.2.1
+        uses: rstuven/npm-install@auth-token-v2.1
         with:
           working-directory: ./collector
 
