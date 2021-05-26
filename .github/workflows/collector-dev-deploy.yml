@@ -29,4 +29,4 @@ jobs:
     - run: |
         cd collector
         npm install
-        sls deploy --stage dev
+        SLS_DEBUG= * sls deploy --stage dev
